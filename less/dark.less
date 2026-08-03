@@ -39,14 +39,15 @@ body {
 }
 
 .login-page .login-container {
-    background-color: rgba(0, 0, 0, var(--blur-opacity-dark));
-    -webkit-backdrop-filter: blur(var(--blur-radius-dark));
-    backdrop-filter: blur(var(--blur-radius-dark));
+    background-color: transparent;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
 
     .login-form {
-        background-color: transparent;
-        -webkit-backdrop-filter: none;
-        backdrop-filter: none;
+        background-color: rgba(0, 0, 0, var(--blur-opacity-dark));
+        -webkit-backdrop-filter: blur(var(--blur-radius-dark));
+        backdrop-filter: blur(var(--blur-radius-dark));
+        border: 1px solid rgba(255, 255, 255, 0.08);
 
         .brand {
             color: #adb5bd;
@@ -59,27 +60,40 @@ body {
                 }
 
                 input {
-                    background-color: transparent !important;
+                    background-color: rgba(255, 255, 255, 0.08) !important;
                     color: #adb5bd;
-                    border-bottom: #adb5bd 1px solid !important;
-                    border-radius: 0 !important;
-                    border-top: none !important;
-                    border-left: none !important;
-                    border-right: none !important;
+                    border: 1px solid rgba(148, 163, 184, 0.25) !important;
+                    border-radius: 8px !important;
                     box-shadow: none;
+
+                    &:focus {
+                        border-color: var(--dark-primary) !important;
+                    }
                 }
 
             }
 
             .cbi-button-apply {
-                background-color: #483d8b !important;
                 background-color: var(--dark-primary) !important;
+                background: var(--dark-primary) !important;
+                background: linear-gradient(135deg, var(--dark-primary), color-mix(in srgb, var(--dark-primary) 72%, #000)) !important;
+                box-shadow: 0 8px 18px color-mix(in srgb, var(--dark-primary) 40%, transparent);
 
                 &:hover,
                 &:focus {
-                    opacity: 0.9;
+                    opacity: 0.92;
+                    transform: translateY(-1px);
+                    box-shadow: 0 10px 22px color-mix(in srgb, var(--dark-primary) 50%, transparent);
                 }
             }
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, var(--blur-opacity-dark));
+            -webkit-backdrop-filter: blur(var(--blur-radius-dark));
+            backdrop-filter: blur(var(--blur-radius-dark));
+            border-top-color: rgba(255, 255, 255, 0.08);
+            color: #adb5bd;
         }
     }
 

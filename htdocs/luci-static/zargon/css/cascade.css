@@ -718,34 +718,40 @@ select[multiple="multiple"] {
 }
 .login-page .login-container {
   z-index: 10;
-  margin-left: 5%;
   display: flex;
   height: 100vh;
-  width: 26rem;
+  width: 100%;
   flex-direction: column;
-  background-color: var(--white);
-  backdrop-filter: blur(var(--blur-radius));
-  background-color: rgba(244, 245, 247, var(--blur-opacity));
-  box-shadow: rgba(0, 0, 0, 0.75) 0 0 35px -5px;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1rem 4rem;
+  box-sizing: border-box;
 }
 .login-page .login-container .login-form {
   position: relative;
   top: 0;
   left: 0;
-  min-height: 100vh;
-  width: 100%;
+  min-height: 0;
+  width: 26rem;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 26rem;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
+  padding: 2.5rem 0 2rem;
+  box-sizing: border-box;
+  background-color: var(--white);
+  background-color: rgba(244, 245, 247, var(--blur-opacity));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius));
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.45) 0 20px 60px -15px;
 }
 .login-page .login-container .login-form .brand {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 50px auto 100px 50px;
+  margin: 0.75rem auto 2.5rem;
   color: var(--default);
   text-decoration: none;
 }
@@ -755,7 +761,7 @@ select[multiple="multiple"] {
   margin-right: 25px;
 }
 .login-page .login-container .login-form .brand .brand-text {
-  margin-right: 45px;
+  margin-right: 0;
   font-size: 1.25rem;
   font-weight: 700;
   font-family: "TypoGraphica";
@@ -795,13 +801,7 @@ select[multiple="multiple"] {
   color: var(--default);
 }
 .login-page .login-container .login-form .form-login .input-group .border {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  border-bottom: 1px solid var(--primary);
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
+  display: none;
 }
 .login-page .login-container .login-form .form-login .input-group input {
   display: block;
@@ -811,18 +811,17 @@ select[multiple="multiple"] {
   font-size: 1rem;
   line-height: 1.5em;
   color: var(--default);
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.7);
   background-clip: padding-box;
-  border: 0;
-  border-bottom: 1px solid var(--white);
-  border-radius: 0;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  border-radius: 8px;
   outline: none;
   box-sizing: border-box;
   box-shadow: 0 3px 2px rgba(233, 236, 239, 0.05);
   transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-.login-page .login-container .login-form .form-login .input-group input:focus + .border {
-  transform: scaleX(1);
+.login-page .login-container .login-form .form-login .input-group input:focus {
+  border-color: var(--primary);
 }
 .login-page .login-container .login-form .form-login .input-group .cbi-input-password {
   position: relative;
@@ -836,47 +835,62 @@ select[multiple="multiple"] {
 }
 .login-page .login-container .login-form .cbi-button-apply {
   width: 100% !important;
-  min-height: 50px;
-  margin: 30px 0 100px;
-  padding: 10px 0;
+  min-height: 52px;
+  margin: 2rem 0 0.75rem;
+  padding: 12px 32px;
   font-size: 15px;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: inherit;
   color: var(--white);
   text-align: center;
-  letter-spacing: 0.8rem;
-  background-color: var(--primary) !important;
+  letter-spacing: 0.2rem;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   outline: none;
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 0 50px 0;
+  box-sizing: border-box;
+  background-color: var(--primary) !important;
+  background: var(--primary) !important;
+  background: linear-gradient(135deg, var(--primary), color-mix(in srgb, var(--primary) 72%, #000)) !important;
+  box-shadow: 0 8px 18px color-mix(in srgb, var(--primary) 35%, transparent);
   transition: all 0.3s ease !important;
 }
 .login-page .login-container .login-form .cbi-button-apply:hover,
 .login-page .login-container .login-form .cbi-button-apply:focus {
-  opacity: 0.9;
+  opacity: 0.92;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px color-mix(in srgb, var(--primary) 45%, transparent);
+}
+.login-page .login-container .login-form .cbi-button-apply:active {
+  transform: translateY(0);
 }
 .login-page .login-container footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 10;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   width: 100%;
-  margin-top: auto;
-  padding: 0 0 30px;
-  color: var(--gray);
+  padding: 0.6rem 1rem;
+  box-sizing: border-box;
+  color: var(--default);
   text-align: center;
   line-height: 1.6rem;
   font-size: 0.75rem;
+  background-color: var(--white);
+  background-color: rgba(244, 245, 247, var(--blur-opacity));
+  -webkit-backdrop-filter: blur(var(--blur-radius));
+  backdrop-filter: blur(var(--blur-radius));
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
 }
-.login-page .login-container footer .ftc {
-  position: absolute;
-  bottom: 30px;
-  width: 100%;
-}
-.login-page .login-container footer .luci-link {
-  display: block;
+.login-page .login-container footer > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 .main {
   position: relative;
