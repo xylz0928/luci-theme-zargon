@@ -9,7 +9,7 @@ include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=Zargon Theme
 LUCI_DEPENDS:=+USE_APK:wget-any +!USE_APK:wget +jsonfilter
-PKG_VERSION:=2.5.62
+PKG_VERSION:=2.5.66
 PKG_RELEASE:=20260803
 
 CONFIG_LUCI_CSSTIDY:=

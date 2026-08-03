@@ -1561,17 +1561,28 @@ header .fill .status span[data-indicator="poll-status"][data-style="inactive"] {
 }
 
 // 页脚编译信息暗色
-.footer .footer-content {
+footer .footer-content {
     background: rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
     border-color: rgba(255, 255, 255, 0.08) !important;
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+    padding: 6px 12px !important;
 }
 
-.footer .footer-content a {
+footer .footer-badge {
+    background: rgba(0, 0, 0, 0.8) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 10px !important;
+    padding: 4px 12px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5) !important;
+}
+
+footer .footer-content a {
     color: var(--dark-primary) !important;
 }
 
-.footer .footer-separator {
+footer .footer-separator {
     color: color-mix(in srgb, var(--dark-primary) 50%, transparent);
 }
 
