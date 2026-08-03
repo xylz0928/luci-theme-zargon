@@ -1,7 +1,7 @@
 {#
-	Argon is a clean HTML5 theme for LuCI. It is based on luci-theme-material Argon Template
+	Zargon is a clean HTML5 theme for LuCI, forked from luci-theme-argon. It is based on luci-theme-material Argon Template
 
-	luci-theme-argon
+	luci-theme-zargon (fork of luci-theme-argon)
 	Copyright 2020 Jerrykuku <jerrykuku@qq.com>
 
 	Have a bug? Please create an issue here on GitHub!
@@ -10,7 +10,7 @@
 	luci-theme-material:
 	Copyright 2015 Lutty Yang <lutty@wcan.in>
 
-	Agron Theme
+	Zargon Theme
 	https://demos.creative-tim.com/argon-dashboard/index.html
 
 	Licensed to the public under the Apache License 2.0
@@ -23,7 +23,7 @@
 
 				<span class="footer-separator">|</span>
 
-				<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ArgonTheme {# vPKG_VERSION #}</a>
+				<a href="https://github.com/jerrykuku/luci-theme-argon" target="_blank">ZargonTheme {# vPKG_VERSION #}</a>
 
 				<span class="footer-separator">|</span>
 
@@ -50,6 +50,6 @@
 		}
 	});
 </script>
-<script type="text/javascript">L.require('menu-argon')</script>
+<script type="text/javascript">L.require('menu-zargon')</script>
 </body>
 </html>

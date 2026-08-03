@@ -1,0 +1,8 @@
+{
+    "luci-theme-zargon": {
+        "description": "Grant UCI access for luci-theme-zargon",
+        "read": {
+            "uci": [ "argon" ]
+        }
+    }
+}

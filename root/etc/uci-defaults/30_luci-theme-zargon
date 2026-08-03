@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ "$PKG_UPGRADE" != 1 ]; then
+	uci get luci.themes.Zargon >/dev/null 2>&1 || \
+	uci batch <<-EOF
+		set luci.themes.Zargon=/luci-static/zargon
+		set luci.main.mediaurlbase=/luci-static/zargon
+		commit luci
+	EOF
+fi
+
+exit 0
