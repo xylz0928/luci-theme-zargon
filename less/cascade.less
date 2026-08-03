@@ -2935,23 +2935,33 @@ header .fill .status span[data-indicator="poll-status"][data-style="inactive"] {
 }
 
 // 页脚编译信息: 卡片设计 + 主题色字体
-.footer .footer-content {
+footer .footer-content {
     display: inline-flex;
     align-items: center;
     gap: 0.5em;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border: 1px solid rgba(148, 163, 184, 0.22);
     border-radius: 12px;
     background: rgba(253, 251, 248, 0.92);
     box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
-.footer .footer-content a {
+footer .footer-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 10px;
+    background: #ffffff !important;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+}
+
+footer .footer-content a {
     color: var(--primary) !important;
     text-decoration: none;
 }
 
-.footer .footer-separator {
+footer .footer-separator {
     color: color-mix(in srgb, var(--primary) 50%, transparent);
 }
 
