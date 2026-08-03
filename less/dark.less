@@ -111,7 +111,10 @@ header::after {
 .main {
     .main-left {
 
-        background-color: rgba(0, 0, 0, var(--blur-opacity-dark)) !important;
+        background-color: rgba(12, 13, 16, var(--blur-opacity-dark)) !important;
+        background-image:
+            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02) 45%, transparent 75%),
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/></svg>");
         -webkit-backdrop-filter: blur(calc(var(--blur-radius-dark) * 2)) saturate(1.4);
         backdrop-filter: blur(calc(var(--blur-radius-dark) * 2)) saturate(1.4);
         border-color: rgba(255, 255, 255, 0.1);
@@ -461,6 +464,49 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
     border-bottom: 0.18751rem solid var(--dark-primary) !important;
 }
 
+// Tab 菜单暗色: pushbot-tab-bar 暗色风格
+.tabs,
+.cbi-tabmenu {
+    background: rgba(30, 41, 59, 0.7) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
+
+    li {
+        background: none !important;
+        border-bottom: none !important;
+
+        a {
+            color: #cbd5e1 !important;
+            background: rgba(30, 41, 59, 0.85) !important;
+            border-color: rgba(255, 255, 255, 0.08) !important;
+            text-decoration: none !important;
+        }
+
+        &:hover a {
+            color: #f8fafc !important;
+            background: rgba(51, 65, 85, 0.6) !important;
+        }
+    }
+
+    // 高具体性清除: 压过 dark.css 旧规则 (旧 .cbi-tabmenu>li[class~="cbi-tab"] 等 (0,2,1))
+    > li[class] {
+        background: none !important;
+        border-bottom: none !important;
+    }
+
+    li[class~="active"] a,
+    li[class~="cbi-tab"] a {
+        color: #f1f5f9 !important;
+        background: rgba(30, 41, 59, 0.95) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), inset 0 -3px 0 color-mix(in srgb, var(--dark-primary) 75%, white) !important;
+    }
+}
+
+// Tab 悬停追踪滑块 (暗色)
+.zargon-tab-slider {
+    background: color-mix(in srgb, var(--dark-primary) 35%, transparent) !important;
+}
+
 .cbi-tabcontainer > .cbi-value:nth-of-type(2n) {
     background-color: #252526;
 }
@@ -620,10 +666,15 @@ td.cbi-value-field var {
     border-right: #1e1e1e 1px solid;
 }
 
-#xhr_poll_status > .label.success {
-    color: #ccc !important;
+#xhr_poll_status {
+    background: var(--dark-primary);
+    background: linear-gradient(135deg, var(--dark-primary), color-mix(in srgb, var(--dark-primary) 72%, #000));
+    box-shadow: 0 8px 18px color-mix(in srgb, var(--dark-primary) 35%, transparent);
+}
 
-    background-color: darkolivegreen !important;
+#xhr_poll_status > .label.success {
+    color: #fff !important;
+    background-color: transparent !important;
 }
 
 .notice {
@@ -653,6 +704,30 @@ td.cbi-value-field var {
     color: #fff !important;
     background-color: darkorange !important;
     border-color: darkorange !important;
+}
+
+/* 保存并应用: 暗色主题渐变 */
+.cbi-button-apply,
+.cbi-input-apply {
+    border-color: var(--dark-primary) !important;
+    background: var(--dark-primary) !important;
+    background: linear-gradient(135deg, var(--dark-primary), color-mix(in srgb, var(--dark-primary) 72%, #000)) !important;
+}
+
+/* 保存: 恒绿渐变 (与刷新按钮一致) */
+.cbi-button-save,
+.cbi-input-save {
+    border-color: #059669 !important;
+    background: #10b981 !important;
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+}
+
+/* 复位: 橙色渐变 */
+.cbi-button-reset,
+.cbi-input-reset {
+    border-color: #ea580c !important;
+    background: #fb923c !important;
+    background: linear-gradient(135deg, #fb923c, #ea580c) !important;
 }
 
 .cbi-page-actions .cbi-button-apply,
@@ -693,6 +768,11 @@ fieldset[id^="cbi-apply-"] {
 header .fill .status span[data-style="active"] {
     color: #ccc !important;
     background-color: darkolivegreen !important;
+}
+
+header .fill .status span[data-indicator="poll-status"] {
+    background: linear-gradient(135deg, rgba(16, 185, 129, 0.42), rgba(5, 150, 105, 0.46)) !important;
+    box-shadow: 0 8px 18px rgba(16, 185, 129, 0.2) !important;
 }
 
 #cbi-wireless .td,

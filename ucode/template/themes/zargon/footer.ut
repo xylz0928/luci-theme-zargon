@@ -50,6 +50,35 @@
 		}
 	});
 </script>
+<script type="text/javascript">
+// zargon: tab hover slider tracking
+(function () {
+	function initBar(bar) {
+		if (bar._zargonSlider) return;
+		var slider = document.createElement('span');
+		slider.className = 'zargon-tab-slider';
+		bar.appendChild(slider);
+		bar._zargonSlider = slider;
+		var move = function (li) {
+			slider.style.width = li.offsetWidth + 'px';
+			slider.style.transform = 'translateX(' + li.offsetLeft + 'px)';
+			slider.style.opacity = '1';
+		};
+		bar.querySelectorAll('li').forEach(function (li) {
+			li.addEventListener('mouseenter', function () { move(li); });
+		});
+		bar.addEventListener('mouseleave', function () { slider.style.opacity = '0'; });
+	}
+	var scan = function () {
+		document.querySelectorAll('.cbi-tabmenu, .tabs').forEach(initBar);
+	};
+	scan();
+	if (window.MutationObserver) {
+		var mo = new MutationObserver(scan);
+		mo.observe(document.body, { childList: true, subtree: true });
+	}
+})();
+</script>
 <script type="text/javascript">L.require('menu-zargon')</script>
 </body>
 </html>
