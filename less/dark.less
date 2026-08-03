@@ -111,10 +111,10 @@ header::after {
 .main {
     .main-left {
 
-        background-color: rgba(12, 13, 16, var(--blur-opacity-dark)) !important;
+        background-color: rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
         background-image:
-            linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02) 45%, transparent 75%),
-            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/></svg>");
+            linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.005) 45%, transparent 75%),
+            url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/></svg>");
         -webkit-backdrop-filter: blur(calc(var(--blur-radius-dark) * 2)) saturate(1.4);
         backdrop-filter: blur(calc(var(--blur-radius-dark) * 2)) saturate(1.4);
         border-color: rgba(255, 255, 255, 0.1);
@@ -352,7 +352,6 @@ body:not(.Interfaces) .cbi-rowstyle-2:first-child {
     background-color: rgb(102, 102, 102) !important;
 }
 
-.cbi-section > h3:first-child,
 .panel-title,
 h3 {
     color: #ccc;
@@ -708,6 +707,8 @@ td.cbi-value-field var {
 
 /* 保存并应用: 暗色主题渐变 */
 .cbi-button-apply,
+.cbi-page-actions .cbi-button-apply,
+.cbi-section-actions .cbi-button-apply,
 .cbi-input-apply {
     border-color: var(--dark-primary) !important;
     background: var(--dark-primary) !important;
@@ -1341,4 +1342,254 @@ input,
 
 .cbi-dropdown[open]>ul.dropdown>li[selected] {
   color: #fff;
+}
+
+// 配置区块卡片化 (暗色)
+.cbi-section,
+.panel {
+    background: rgba(10, 10, 18, 0.75) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+// 标题卡片暗色 (pushbot)
+#maincontent h2,
+.cbi-map-descr {
+    background: rgba(10, 10, 18, 0.75) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+#maincontent h2 {
+    color: #e8e8e8 !important;
+}
+
+.cbi-map-descr {
+    color: #d9d9d9 !important;
+}
+
+// 卡片标题暗色 (无底色, pushbot 亮字)
+.cbi-section > legend,
+.cbi-section-title,
+.panel-title {
+    background: transparent !important;
+    color: #e8e8e8 !important;
+}
+
+// 概览页标题暗色: 无底色
+.cbi-title h3,
+.Dashboard h3 {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+// 现代化表格暗色
+.table,
+.cbi-section-table,
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+
+    .th,
+    thead th {
+        background: rgba(51, 65, 85, 0.4) !important;
+        color: #94a3b8 !important;
+        border-bottom-color: rgba(148, 163, 184, 0.25) !important;
+    }
+
+    .td,
+    td {
+        background: transparent !important;
+        border-bottom-color: rgba(148, 163, 184, 0.1) !important;
+    }
+
+    .tr:hover .td,
+    tbody tr:hover td {
+        background: rgba(96, 165, 250, 0.1) !important;
+    }
+
+    .tr:last-child .td,
+    tbody tr:last-child td {
+        border-bottom: none !important;
+    }
+
+    .cbi-rowstyle-1,
+    .cbi-rowstyle-2 {
+        background: transparent !important;
+    }
+}
+
+// 清除 nth-of-type 斑马纹(暗色)
+table > tbody > tr:nth-of-type(2n),
+.table > .tr:nth-of-type(2n),
+.table > .tbody > .tr:nth-of-type(2n),
+.cbi-section-table > tbody > tr:nth-of-type(2n),
+.cbi-section-table > .tr:nth-of-type(2n) {
+    background: transparent !important;
+}
+
+// 蓝色按钮暗色: --dark-primary 渐变
+.cbi-button-edit,
+.cbi-button-add,
+.cbi-button-positive,
+.cbi-button-link,
+.cbi-button-reload,
+.cbi-button-action,
+.cbi-button-find,
+.cbi-button[value="Enable"],
+.cbi-button[value="Scan"],
+.cbi-button[value^="Back"],
+.cbi-button[value="Submit"],
+.cbi-button[value="Upload"],
+.cbi-button[value$="Apply"],
+.cbi-button[onclick="addKey(event)"],
+.cbi-button-neutral[onclick="handleConfig(event)"] {
+    background: var(--dark-primary) !important;
+    background: linear-gradient(135deg, var(--dark-primary), color-mix(in srgb, var(--dark-primary) 72%, #000)) !important;
+    border-color: var(--dark-primary) !important;
+}
+
+// 绿色按钮暗色: 恒绿
+.cbi-button-success,
+.cbi-button-download {
+    background: #10b981 !important;
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    border-color: #059669 !important;
+}
+
+// 橙色按钮暗色: 恒橙
+.cbi-button-warning {
+    background: #fb923c !important;
+    background: linear-gradient(135deg, #fb923c, #ea580c) !important;
+    border-color: #ea580c !important;
+}
+
+// 暗色: h3 二级标题 / tab 二级卡片 / 日志卡片
+h3 {
+    color: #e8e8e8;
+}
+
+.cbi-section-node-tabbed > div[data-tab] {
+    background: rgba(10, 10, 18, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+#content_syslog {
+    background: rgba(10, 10, 18, 0.75) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+}
+
+// CBI 表格行透明
+.cbi-section-table .cbi-section-table-row {
+    background: transparent !important;
+}
+
+// 暗色: 卡片磨砂偏深 + 刷新按钮 inactive 橙色
+.cbi-section,
+.panel,
+#maincontent h2,
+.cbi-map-descr,
+.cbi-section-node-tabbed > div[data-tab],
+#content_syslog,
+.table,
+.cbi-section-table {
+    background-color: rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
+    background-image: none;
+}
+
+header .fill .status span[data-indicator="poll-status"][data-style="inactive"] {
+    background: #fb923c !important;
+    background: linear-gradient(135deg, #fb923c, #ea580c) !important;
+}
+
+// 暗色控件: 恢复暗色设计 (压过亮色控件底色)
+#maincontent .cbi-input-text,
+#maincontent .cbi-input,
+#maincontent .cbi-value-field input,
+#maincontent .cbi-dynlist input,
+#maincontent .cbi-dropdown {
+    background-color: transparent !important;
+}
+
+#maincontent .cbi-input-select,
+#maincontent .cbi-value-field select,
+#maincontent select {
+    background-color: #1e1e1e !important;
+}
+
+#maincontent .cbi-input-textarea,
+#maincontent .cbi-value-field textarea {
+    background-color: transparent !important;
+}
+
+// 接口状态卡暗色
+.ifacebox {
+    background: rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.ifacebox-head {
+    background: transparent !important;
+    color: #e8e8e8 !important;
+}
+
+.ifacebox-head.active {
+    background: var(--dark-primary) !important;
+    color: #fff !important;
+}
+
+.ifacebox-body {
+    background: transparent !important;
+}
+
+// 二级卡片: 与 Tab 配色一致 (暗色 Tab 按钮)
+.cbi-section-node-tabbed > div[data-tab] {
+    background: rgba(30, 41, 59, 0.85) !important;
+}
+
+// 二级卡片内设置框: 与二级卡片底色一致 (暗色)
+#maincontent .cbi-section-node-tabbed > div[data-tab] .cbi-input-text,
+#maincontent .cbi-section-node-tabbed > div[data-tab] .cbi-input-select,
+#maincontent .cbi-section-node-tabbed > div[data-tab] .cbi-input-textarea,
+#maincontent .cbi-section-node-tabbed > div[data-tab] .cbi-input,
+#maincontent .cbi-section-node-tabbed > div[data-tab] select,
+#maincontent .cbi-section-node-tabbed > div[data-tab] textarea,
+#maincontent .cbi-section-node-tabbed > div[data-tab] .cbi-dropdown {
+    background-color: rgba(30, 41, 59, 0.85) !important;
+}
+
+// 页脚编译信息暗色
+.footer .footer-content {
+    background: rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4) !important;
+}
+
+.footer .footer-content a {
+    color: var(--dark-primary) !important;
+}
+
+.footer .footer-separator {
+    color: color-mix(in srgb, var(--dark-primary) 50%, transparent);
+}
+
+// 表格分割线: 暗色纯黑 (含 div 化表格 .tr/.td)
+.table,
+.table td, .table .td,
+.table th, .table .th,
+.table tr, .table .tr,
+.cbi-section-table td, .cbi-section-table .td,
+.cbi-section-table th, .cbi-section-table .th,
+.cbi-section-table tr, .cbi-section-table .tr {
+    border-color: rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
+}
+
+// 表格行横线: 暗色纯黑
+body:not([data-page="admin-dashboard"]) tr > td,
+body:not([data-page="admin-dashboard"]) tr > th,
+body:not([data-page="admin-dashboard"]) .tr > .td,
+body:not([data-page="admin-dashboard"]) .tr > .th {
+    border-top: thin solid rgba(4, 5, 7, var(--blur-opacity-dark)) !important;
 }
