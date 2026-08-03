@@ -1,6 +1,6 @@
 {
-    "luci-theme-argon": {
-        "description": "Grant UCI access for luci-theme-argon",
+    "luci-theme-zargon": {
+        "description": "Grant UCI access for luci-theme-zargon",
         "read": {
             "uci": [ "argon" ]
         }

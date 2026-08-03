@@ -33,7 +33,7 @@
 
 # 一个全新的 OpenWrt 主题
 
-Argon 是**一款干净整洁的 OpenWrt LuCI 主题**，  
+Zargon 是**一款干净整洁的 OpenWrt LuCI 主题**（fork 自 Argon），  
 允许用户使用图片或视频自定义其登录界面。  
 它还支持在浅色模式和深色模式之间自动或手动切换。
 

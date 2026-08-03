@@ -1,7 +1,7 @@
 {#
-	Argon is a clean HTML5 theme for LuCI. It is based on luci-theme-material Argon Template
+	Zargon is a clean HTML5 theme for LuCI, forked from luci-theme-argon. It is based on luci-theme-material Argon Template
 
-	luci-theme-argon
+	luci-theme-zargon (fork of luci-theme-argon)
 	Copyright 2020 Jerrykuku <jerrykuku@qq.com>
 
 	Have a bug? Please create an issue here on GitHub!
@@ -10,7 +10,7 @@
 	luci-theme-material:
 	Copyright 2015 Lutty Yang <lutty@wcan.in>
 
-	Argon Theme
+	Zargon Theme
 	https://demos.creative-tim.com/argon-dashboard/index.html
 
 	Licensed to the public under the Apache License 2.0
@@ -35,7 +35,7 @@
 	let mode = 'normal';
 	let bar_color = '#5e72e4';
 	let primary, dark_primary, blur_radius, blur_radius_dark, blur_opacity, blur_opacity_dark;
-	const dark_css = readfile('/www/luci-static/argon/css/dark.css');
+	const dark_css = readfile('/www/luci-static/zargon/css/dark.css');
 	if (access('/etc/config/argon')) {
 		primary = cfg.get_first('argon', 'global', 'primary');
 		dark_primary = cfg.get_first('argon', 'global', 'dark_primary');
