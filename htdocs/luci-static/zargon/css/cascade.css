@@ -2194,8 +2194,6 @@ td > table > tbody > tr > td,
 /* Tab 悬停追踪滑块 (由 footer.ut 的脚本驱动) */
 .zargon-tab-slider {
   position: absolute;
-  top: 4px;
-  bottom: 4px;
   left: 0;
   width: 0;
   background: color-mix(in srgb, var(--primary) 25%, transparent);
@@ -4903,4 +4901,22 @@ body:not([data-page="admin-dashboard"]) tr > th,
 body:not([data-page="admin-dashboard"]) .tr > .td,
 body:not([data-page="admin-dashboard"]) .tr > .th {
   border-top: thin solid rgba(253, 251, 248, 0.92) !important;
+}
+
+/* 表格去底色: 透出所在卡片, 仅保留悬停高亮 */
+.table,
+.cbi-section-table,
+table,
+.table .tr, .cbi-section-table .tr, table tr,
+.table .td, .cbi-section-table .td, table td,
+.table .th, .cbi-section-table .th, table th {
+  background: transparent !important;
+}
+
+/* 深层嵌套卡片: 二级起每级仅缩进 2px (一级→二级缩进保持不变) */
+.cbi-section-node-tabbed > div[data-tab]:has(> .cbi-value > .cbi-section),
+div[data-tab] .cbi-section-node-tabbed > div[data-tab],
+div[data-tab] .cbi-section,
+div[data-tab] .cbi-value:has(> .cbi-section) {
+  padding: 2px !important;
 }
