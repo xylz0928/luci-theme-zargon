@@ -57,7 +57,8 @@
 		bar._zargonSlider = slider;
 		var move = function (li) {
 			slider.style.width = li.offsetWidth + 'px';
-			slider.style.transform = 'translateX(' + li.offsetLeft + 'px)';
+			slider.style.height = li.offsetHeight + 'px';
+			slider.style.transform = 'translateX(' + li.offsetLeft + 'px) translateY(' + li.offsetTop + 'px)';
 			slider.style.opacity = '1';
 		};
 		bar.querySelectorAll('li').forEach(function (li) {

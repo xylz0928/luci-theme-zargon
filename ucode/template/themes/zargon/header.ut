@@ -111,6 +111,23 @@
 		}
 		{% endif -%}
 	</style>
+	<script>
+		// zargon: 深色二级卡片/Tab 动态底色 (主题色 max<->min 对调, 最高压到 20, 等比例调黑)
+		(function () {
+			var root = document.documentElement;
+			var primary = getComputedStyle(root).getPropertyValue('--primary').trim();
+			var m = /^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(primary);
+			if (!m) return;
+			var r = parseInt(m[1], 16), g = parseInt(m[2], 16), b = parseInt(m[3], 16);
+			var mx = Math.max(r, g, b), mn = Math.min(r, g, b);
+			var r2 = (r === mx) ? mn : ((r === mn) ? mx : r);
+			var g2 = (g === mx) ? mn : ((g === mn) ? mx : g);
+			var b2 = (b === mx) ? mn : ((b === mn) ? mx : b);
+			var s = (mx > 0) ? 20 / mx : 0;
+			root.style.setProperty('--dark-card-rgb',
+				Math.round(r2 * s) + ', ' + Math.round(g2 * s) + ', ' + Math.round(b2 * s));
+		})();
+	</script>
 	<!-- Stylesheets -->
 	{% if (node?.css): %}
 	<link rel="stylesheet" href="{{ resource }}/{{ node.css}}">
