@@ -97,16 +97,16 @@ make -j1 V=s
 
 ```bash
 wget https://github.com/zzsj0928/luci-theme-zargon/releases/download/v2.5.23/luci-theme-zargon_2.5.23-1_all.ipk
-wget https://github.com/jerrykuku/luci-app-argon-config/releases/download/v2.4.6/luci-app-argon-config_2.4.6-1_all.ipk
-opkg install ./luci-theme-zargon_2.5.23-1_all.ipk ./luci-app-argon-config_2.4.6-1_all.ipk
+wget https://github.com/jerrykuku/luci-app-argon-config/releases/download/v2.5.76/luci-app-argon-config_2.5.76-1_all.ipk
+opkg install ./luci-theme-zargon_2.5.23-1_all.ipk ./luci-app-argon-config_2.5.76-1_all.ipk
 ```
 
 ### 安装 release 包 (`apk`)
 
 ```bash
 wget https://github.com/zzsj0928/luci-theme-zargon/releases/download/v2.5.23/luci-theme-zargon-2.5.23-r1.apk
-wget https://github.com/jerrykuku/luci-app-argon-config/releases/download/v2.4.6/luci-app-argon-config-2.4.6-r1.apk
-apk add --allow-untrusted ./luci-theme-zargon-2.5.23-r1.apk ./luci-app-argon-config-2.4.6-r1.apk
+wget https://github.com/jerrykuku/luci-app-argon-config/releases/download/v2.5.76/luci-app-argon-config-2.5.76-r1.apk
+apk add --allow-untrusted ./luci-theme-zargon-2.5.23-r1.apk ./luci-app-argon-config-2.5.76-r1.apk
 ```
 
 

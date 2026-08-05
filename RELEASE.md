@@ -1,5 +1,36 @@
 # Update log for master branch
 
+## v2.5.76 [ 2026.08.05 ]
+
+### What's Changed
+* Rename Project by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/1
+* Modify Menu by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/2
+* Delete root@10.14.0.1 by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/3
+* Modify Tabs by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/4
+* Modify All Cards by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/5
+* Modify Foot by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/6
+* Modify level2 card by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/7
+* Update README by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/8
+
+### New Contributors
+* @xylz0928 made their first contribution in https://github.com/zzsj0928/luci-theme-zargon/pull/1
+
+**Full Changelog**: https://github.com/zzsj0928/luci-theme-zargon/commits/v2.5.76
+
+### What's Changed
+* Rename Project by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/1
+* Modify Menu by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/2
+* Delete root@10.14.0.1 by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/3
+* Modify Tabs by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/4
+* Modify All Cards by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/5
+* Modify Foot by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/6
+* Modify level2 card by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/7
+* Update README by @xylz0928 in https://github.com/zzsj0928/luci-theme-zargon/pull/8
+
+### New Contributors
+* @xylz0928 made their first contribution in https://github.com/zzsj0928/luci-theme-zargon/pull/1
+
+**Full Changelog**: https://github.com/zzsj0928/luci-theme-zargon/commits/v2.5.76
 ## v2.4.6 [ 2026.07.31 ]
 
 ### What's Changed
